@@ -5,13 +5,13 @@
 def caeser_cipher (string, key)
   new_string = ""
   alphapet = "abcdefghijklmnopqrstuvwxyz"
-  for i in 0...string.length
-    if alphapet.include?(string[i])
-      new_string << alphapet[alphapet.index(string[i]) + key]
-    elsif alphapet.include?(string[i].downcase)
-      new_string << alphapet[alphapet.index(string[i].downcase) + key].upcase
+  string.each_char do |char|
+    if alphapet.include?(char)
+      new_string << alphapet[alphapet.index(char) + key]
+    elsif alphapet.include?(char.downcase)
+      new_string << alphapet[alphapet.index(char.downcase) + key].upcase
     else
-      new_string << string[i]
+      new_string << char
     end
   end
   new_string
