@@ -4,7 +4,7 @@
 
 def caeser_cipher (string, key)
   new_string = ""
-  alphapet = "abcdefghijklmnopqrstuvwxyz"
+  alphapet = [*("a".."z")]
   string.each_char do |char|
     if alphapet.include?(char)
       new_string << alphapet[alphapet.index(char) + key]
